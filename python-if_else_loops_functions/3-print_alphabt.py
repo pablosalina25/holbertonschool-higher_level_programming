@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 for alp in range(97, 123):
-    if alp == 101:
-        alp += 1
-    elif alp == 113:
-        alp +=1 
-        print("{}".format(chr(alp)), end="")
+    if alp == 101 or alp == 113:
+        continue
+    print("{}".format(chr(alp)), end="")
