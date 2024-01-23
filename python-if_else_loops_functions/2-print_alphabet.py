@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-for a in range(ord('a'), ord('z')+1):
-    print(chr(a), end='')
+for alp in range(97, 123):
+    print("{}".format(chr(i)), end="")
