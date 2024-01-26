@@ -5,7 +5,7 @@ if __name__ == "__main__":
     full = 0
     if len(sys.argv) > 0:
         for n in arguments:
-            total += int(n)
+            full += int(n)
         print(full)
     else:
         print(full)
