@@ -1,8 +1,14 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     argument= []
-x = 0
-while x < len(argument):
-    if x == 0:
-        print(" 0 {} arguments".format(argument))
-    x += 1
+    cont = 0
+    while cont < len(argument):
+        if len(argument) == 0:
+        print(" 0 {} arguments.".format(len(argument), argument))
+            cont += 1
+        elif len(arguments) == 1:
+        print("{} argument: {}.format (len(argument), (argument))
+            cont +=1
+        elif len(arguments) > 1:
+        print("{} arguments: {}.format(len(argument), argument))
+            cont +=1  
