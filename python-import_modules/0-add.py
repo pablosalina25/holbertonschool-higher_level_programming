@@ -2,4 +2,4 @@
 import add_0.py
 a = 1
 b = 2
-    print (add_0)
+    print (add_0.add(a+b)
