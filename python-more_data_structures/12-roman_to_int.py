@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 def roman_to_int(roman_string):
     if not isinstance(roman_string, str):
         return 0
@@ -10,10 +8,10 @@ def roman_to_int(roman_string):
     for numeral in reversed(roman_string):
         current_value = roman_numerals[numeral]
 
-        if current_value < prev_value:
-            total -= current_value
-        else:
+        if current_value >= prev_value:
             total += current_value
+        else:
+            total -= current_value
         prev_value = current_value
     return total
 
