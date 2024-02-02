@@ -3,9 +3,10 @@
 
 class Square:
     """This is the Square Class"""
-    def __init__(self, size=0):
-        """Initializing the square size"""
-        self.__size = size
+    def __init__(self, size=0, position=(0, 0)):
+        """Initializing the square size and position"""
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -20,9 +21,9 @@ class Square:
         else:
             self.__size = size
 
-	 @property
+    @property
     def position(self):
-        return (self.__position)
+        return self.__position
 
     @position.setter
     def position(self, value):
@@ -40,13 +41,17 @@ class Square:
         Print a square using '#' characters to stdout.
 
         If the size is 0, it prints an empty line. Otherwise, it prints a square
-        with the specified size.
+        with the specified size and position.
 
         Each row of the square is printed as a string of '#' characters.
         """
         if self.__size == 0:
             print()
+        for i in range(self.__position[1]):
+            print()
         for j in range(self.__size):
+            for k in range(self.__position[0]):
+                print(" ", end="")
             for colm in range(self.__size):
                 print("#", end="")
             print()
