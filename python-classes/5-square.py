@@ -41,4 +41,3 @@ class Square:
             for colm in range(self.__size):
                 print("#", end="")
             print()
-
