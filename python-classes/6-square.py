@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""A class Square that defines a square by: (based on 2-square.py)."""
+# A class Square that defines a square by: (based on 2-square.py).
 
 class Square:
     """This is the Square Class"""
+
     def __init__(self, size=0, position=(0, 0)):
         """Initializing the square size and position"""
         self.size = size
@@ -13,13 +14,13 @@ class Square:
         return self.__size
 
     @size.setter
-    def size(self, size):
-        if type(size) is not int:
+    def size(self, value):
+        if type(value) is not int:
             raise TypeError('size must be an integer')
-        if size < 0:
+        if value < 0:
             raise ValueError('size must be >= 0')
         else:
-            self.__size = size
+            self.__size = value
 
     @property
     def position(self):
@@ -40,7 +41,8 @@ class Square:
         """
         Print a square using '#' characters to stdout.
 
-        If the size is 0, it prints an empty line. Otherwise, it prints a square
+        If the size is 0, it prints an empty line.
+        Otherwise, it prints a square
         with the specified size and position.
 
         Each row of the square is printed as a string of '#' characters.
@@ -55,4 +57,3 @@ class Square:
             for colm in range(self.__size):
                 print("#", end="")
             print()
-
