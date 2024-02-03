@@ -30,7 +30,8 @@ class Square:
         """
         Print a square using '#' characters to stdout.
 
-        If the size is 0, it prints an empty line. Otherwise, it prints a square
+        If the size is 0, it prints an empty line.
+        Otherwise, it prints a square
         with the specified size.
 
         Each row of the square is printed as a string of '#' characters.
