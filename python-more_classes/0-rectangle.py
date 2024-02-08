@@ -1,7 +1,12 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
-    nmatrix = []
-    if matrix:
-        for number in matrix:
-            nmatrix.append(list(map(lambda value: value ** 2, number)))
-        return nmatrix
+"""
+This module defines a simple Rectangle class.
+"""
+
+class Rectangle:
+    """
+    This class represents a rectangle.
+    It doesn't contain any attributes or methods yet.
+    """
+    pass
+
