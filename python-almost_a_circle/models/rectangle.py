@@ -48,61 +48,55 @@ class Rectangle(Base):
         self.__height = height
 
     def area(self):
-    """
-    Calculate and return the area of the rectangle.
-    """
-    return self.__height * self.__width
-
+        """
+        Calculate and return the area of the rectangle.
+        """
+        return self.__height * self.__width
 
     def display(self):
-    """
-    Print the Rectangle instance in stdout using the character '#'.
-    """
-    for t in range(self.y):
-        print()
-    for j in range(self.height):
-        print(" " * self.x + "#" * self.width)
-
+        """
+        Print the Rectangle instance in stdout using the character '#'.
+        """
+        for t in range(self.y):
+            print()
+        for j in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
-    """
-    Return a string representation of the Rectangle.
-    """
-    return ("[Rectangle] ({}) {}/{} - {}/{}"
-            .format(self.id, self.x, self.y, self.width, self.height))
-
+        """
+        Return a string representation of the Rectangle.
+        """
+        return ("[Rectangle] ({}) {}/{} - {}/{}"
+                .format(self.id, self.x, self.y, self.width, self.height))
 
     def update(self, *args, **kwargs):
-    """
-    Update the Rectangle attributes based on the given arguments or keyword arguments.
-    """
-    if len(args) >= 1:
-        self.id = args[0]
-    if len(args) >= 2:
-        self.width = args[1]
-    if len(args) >= 3:
-        self.height = args[2]
-    if len(args) >= 4:
-        self.x = args[3]
-    if len(args) >= 5:
-        self.y = args[4]
-    else:
+        """
+        Update the Rectangle attributes based on the given arguments or keyword arguments.
+        """
+        if len(args) >= 1:
+            self.id = args[0]
+        if len(args) >= 2:
+            self.width = args[1]
+        if len(args) >= 3:
+            self.height = args[2]
+        if len(args) >= 4:
+            self.x = args[3]
+        if len(args) >= 5:
+            self.y = args[4]
         if "id" in kwargs:
             self.id = kwargs["id"]
-        if "width" in kwargs:
+        elif "width" in kwargs:
             self.width = kwargs["width"]
-        if "height" in kwargs:
+        elif "height" in kwargs:
             self.height = kwargs["height"]
-        if "x" in kwargs:
+        elif "x" in kwargs:
             self.x = kwargs["x"]
-        if "y" in kwargs:
+        elif "y" in kwargs:
             self.y = kwargs["y"]
 
-
     def to_dictionary(self):
-    """
-    Return a dictionary representation of the Rectangle.
-    """
-    return {"id": self.id, "width": self.width, "height": self.height,
-            "x": self.x, "y": self.y}
-
+        """
+        Return a dictionary representation of the Rectangle.
+        """
+        return {"id": self.id, "width": self.width, "height": self.height,
+                "x": self.x, "y": self.y}
