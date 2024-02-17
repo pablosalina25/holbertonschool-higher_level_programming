@@ -15,11 +15,11 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            self.id = Base.__nb_object
+            self.id = Base.__nb_objects
 
- @staticmethod
+    @staticmethod
     def from_json_string(json_string):
-        """ Converts a list of dictionaries to a JSON string """
+        """Converts a JSON string to a list of dictionaries."""
         if json_string is None:
             return []
         else:
@@ -27,7 +27,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        ""Returns an instance with attributes."""
+        """Returns an instance with attributes."""
         if cls.__name__ == "Rectangle":
             Rectangle_two = cls(3, 13)
             Rectangle_two.update(**dictionary)
@@ -36,4 +36,3 @@ class Base:
             Square_two = cls(3)
             Square_two.update(**dictionary)
             return Square_two
-
