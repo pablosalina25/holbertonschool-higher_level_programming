@@ -36,3 +36,16 @@ class Base:
             Square_two = cls(3)
             Square_two.update(**dictionary)
             return Square_two
+
+    @classmethod
+    def load_from_file(cls):
+        """Method that returns a list of instances."""
+        filename = "{}.json".format(cls.__name__)
+        if not exists(filename):
+            return []
+        else:
+            with open(filename, "r") as file:
+                json_data = file.read()
+                instance_dicts = cls.from_json_string(json_data)
+                return [cls.create(**instance_dict)
+                        for instance_dict in instance_dicts]
