@@ -17,29 +17,9 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_object
 
-class MyClass:
-    @staticmethod
-    def to_json_string(list_dictionaries):
-        """Converts a list of dictionaries to a JSON string."""
-        if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
-        else:
-            return json.dumps(list_dictionaries)
-
-    @classmethod
-    def save_to_file(cls, list_objs):
-        """Saves objects to a JSON file."""
-        dictionary_list = []
-        with open(f"{cls.__name__}.json", "w") as file:
-            if list_objs is None:
-                list_objs = []
-            for obj in list_objs:
-                dictionary_list.append(obj.to_dictionary())
-            file.write(cls.to_json_string(dictionary_list))
-
-    @staticmethod
+ @staticmethod
     def from_json_string(json_string):
-        """Converts a JSON string to a list of dictionaries."""
+        """ Converts a list of dictionaries to a JSON string """
         if json_string is None:
             return []
         else:
@@ -47,24 +27,13 @@ class MyClass:
 
     @classmethod
     def create(cls, **dictionary):
-        """Creates an instance based on a dictionary."""
+        ""Returns an instance with attributes."""
         if cls.__name__ == "Rectangle":
-            rectangle_instance = cls(3, 13)
-            rectangle_instance.update(**dictionary)
-            return rectangle_instance
+            Rectangle_two = cls(3, 13)
+            Rectangle_two.update(**dictionary)
+            return Rectangle_two
         else:
-            square_instance = cls(3)
-            square_instance.update(**dictionary)
-            return square_instance
+            Square_two = cls(3)
+            Square_two.update(**dictionary)
+            return Square_two
 
-    @classmethod
-    def load_from_file(cls):
-        """Loads instances from a JSON file."""
-        if not exists(f"{cls.__name__}.json"):
-            return []
-        else:
-            with open(f"{cls.__name__}.json", "r") as file:
-                string = file.read()
-                dictionaries = cls.from_json_string(string)
-                return [cls.create(**instance_dict)
-                        for instance_dict in dictionaries]
